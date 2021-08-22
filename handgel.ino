@@ -56,14 +56,13 @@ void loop()
       if(sum==data[3])
       {
         distance=(data[1]<<8)+data[2];
-        if(distance>10)
+        if(distance<70)           //If the distance is less than 3 cm we will give a warning, The container is about 10cm high    
           {
-           Serial.print("distance=");   //If the distance is less than 3 cm we will give a warning 
-           Serial.print(distance/30);
+           Serial.print("distance=");    
+           Serial.print(distance/10);
            Serial.println("cm");
           }else 
              {
-               Serial.println("Below the lower limit");
                Serial.println("De handgel is bijna leeg");
              }
       }
